@@ -30,9 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'project-4-heroku-app-fda5767b3efb.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'project-4-heroku-app-fda5767b3efb.herokuapp.com', 'localhost', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io']
 
-
+CSRF_TRUSTED_ORIGINS = ['https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io/admin/login/?next=/admin/']
 
 # Application definition
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'blog',
 ]
 
