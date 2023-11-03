@@ -32,6 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'project-4-heroku-app-fda5767b3efb.herokuapp.com', 'localhost', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io']
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 CSRF_TRUSTED_ORIGINS = ['https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io/admin/login/?next=/admin/']
 
 # Application definition
