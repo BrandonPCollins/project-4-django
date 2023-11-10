@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.messages import constants as messages 
 if os.path.isfile('env.py'):
     import env
 
@@ -30,11 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'project-4-heroku-app-fda5767b3efb.herokuapp.com', 'localhost', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'project-4-heroku-app-fda5767b3efb.herokuapp.com', 'localhost', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', '8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu106.gitpod.io']
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io/admin/login/?next=/admin/']
+CSRF_TRUSTED_ORIGINS = ['https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu105.gitpod.io/admin/login/?next=/admin/', 'https://8000-brandonpcol-project4dja-p0fbflj2n4i.ws-eu106.gitpod.io']
 
 # Application definition
 
@@ -60,6 +61,15 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-info',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+}
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
