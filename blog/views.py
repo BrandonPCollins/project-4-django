@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import ListView, DetailView, CreateView
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
@@ -65,9 +66,7 @@ class PostDetail(View):
             },
         )
 
-
-class PostLike(View):
-    
+class PostLike(View):    
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -76,3 +75,8 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+class AddPostView(CreateView):
+    model = Post
+    template_name = 'add_post.html'
+    fields = '__all__'
