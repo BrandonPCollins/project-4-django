@@ -1,6 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
+<!-- Makes the page's title dynamic to the post's title-->
+{% block title %} {{ post.title }} {% endblock %}
+
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
