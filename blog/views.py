@@ -79,4 +79,5 @@ class PostLike(View):
 class AddPostView(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = '__all__'
+    #fields = '__all__'
+    fields = ('title', 'author', 'slug', 'content')

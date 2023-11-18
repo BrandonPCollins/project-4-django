@@ -97,6 +97,14 @@
             let alert = new bootstrap.Alert(messages);
             alert.close();
         }, 2000);
+        // Shows an alert on post submission 
+        document.getElementById("postForm").addEventListener("submit", function() {
+            alert("As soon as your post is approved, it will appear on the site.");
+        });
+        // Shows an alert on comment submission 
+        document.getElementById("commentForm").addEventListener("submit", function() {
+            alert("As soon as your comment is approved, it will appear on the site.");
+        });
     </script>
 </body>
 
